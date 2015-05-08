@@ -1,0 +1,104 @@
+<style>
+    pre.format {
+        background-color: #EBEDED;
+        margin: 5px;
+        padding: 3px;
+        border: solid 1px #737370;
+        border-radius: 3px;
+        --webkit-border-radius: 3px;
+    }
+    .rules li {
+        list-style-type: circle;
+        margin-left: 40px;
+    }
+</style>
+
+<p>
+    Nicola considera que Sophia llama demasiado a casa, y que su factura de tel&eacute;fono
+     es muy cara. Por lo tanto, decide revisar las facturas de las &uacute;ltimas llamadas
+     y se da a la tarea de calcular exactamente cu&aacute;nto le cuesta.
+</p>
+
+<p>
+    La factura telef&oacute;nica se representa como una matriz con informaci&oacute;n sobre las
+    llamadas. Deber&aacute;s ayudar a calcular el costo de cada llamada de Sophia,
+    teniendo en cuenta que cada una se representa como una cadena (<em>str</em>) con la
+    fecha, hora y duraci&oacute;n de la llamada (en segundos), usando el formato
+    siguiente:<br>
+    <pre class="format">
+      "YYYY-MM-DD hh:mm:ss duration"</pre>
+    La fecha y la hora en esta informaci&oacute;n corresponden al inicio de la llamada.
+</p>
+
+<p>
+    Space-Time Communications Co. tiene varias reglas sobre c&oacute;mo se calcula el
+    costo de las llamadas:
+    <ul class="rules">
+        <li>
+            Los primeros 100 (cien) minutos en un d&iacute;a tienen un precio de 1 moneda por minuto;
+        </li>
+        <li>
+            Despu&eacute;s de 100 minutos en un d&iacute;a, cada minuto cuesta 2 monedas por minuto;
+        </li>
+        <li>
+            Todas las llamadas se redondean al minuto m&aacute;s cercano. Por ejemplo 59 sec &asymp; 1 min, 61 sec &asymp; 2 min;
+        </li>
+        <li>
+            Llamadas cuentan el d&iacute;a que comenzaron. Por ejemplo si la llamada se
+             inici&oacute; el 2014-01-01 23:59:59, entonces cuenta en el 2014-01-01;
+        </li>
+
+
+    </ul>
+</p>
+
+
+<p>
+    Por ejemplo:
+    <pre class="format">
+2014-01-01 01:12:13 181
+2014-01-02 20:11:10 600
+2014-01-03 01:12:13 6009
+2014-01-03 12:13:55 200
+</pre>
+    Primer d&iacute;a  -- 181s&asymp;4m -- 4 monedas;<br>
+    Segundo d&iacute;a -- 600s=10m -- 10 monedas;<br>
+    Tercer d&iacute;a -- 6009s&asymp;101m + 200s&asymp;4m -- 100 + 5 * 2 = 110 monedas;<br>
+    Total -- 124 monedas.
+
+</p>
+<p>
+    <strong>Datos de Entrada: </strong> Informaci&oacute;n sobre las llamadas, como una
+     tupla de cadenas (<em>str</em>).
+</p>
+
+<p>
+    <strong>Salida: </strong> El costo total, como un entero (<em>int</em>).
+</p>
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Ejemplo:</strong>
+    </p>
+    <pre class="brush: python">
+total_cost(("2014-01-01 01:12:13 181",
+            "2014-01-02 20:11:10 600",
+            "2014-01-03 01:12:13 6009",
+            "2014-01-03 12:13:55 200")) == 124
+    </pre>
+</div>
+
+<p class="for_info_only">
+    <strong>&iquest;C&oacute;mo se usa?: </strong>
+    Esta misi&oacute;n te ense&ntilde;ar&aacute; c&oacute;mo leer y analizar diferentes tipos de datos.
+    En ocasiones no es necesario utilizar todos los datos proporcionados sino
+    algunos fragmentos importantes.
+</p>
+
+<p>
+    <strong>Condiciones:</strong>
+    0 &lt; len(calls) &le; 30<br>
+    0 &lt; call_duration &le; 7200<br>
+    La factura se ordena por fecha y hora.
+</p>
