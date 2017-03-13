@@ -79,12 +79,22 @@
     <p>
         <strong>Példa:</strong>
     </p>
+    {% if interpreter.slug == "js-node" %}
+    <pre class="brush: python">
+totalCost(["2014-01-01 01:12:13 181",
+            "2014-01-02 20:11:10 600",
+            "2014-01-03 01:12:13 6009",
+            "2014-01-03 12:13:55 200"]) == 124
+    </pre>
+
+{% else %}
     <pre class="brush: python">
 total_cost(("2014-01-01 01:12:13 181",
             "2014-01-02 20:11:10 600",
             "2014-01-03 01:12:13 6009",
             "2014-01-03 12:13:55 200")) == 124
     </pre>
+{% endif %}
 </div>
 
 <p class="for_info_only">
