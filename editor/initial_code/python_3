@@ -1,6 +1,6 @@
 from typing import List
 
-def total_cost(calls: List[]) -> int:
+def total_cost(calls: List[str]) -> int:
     return 0
 
 
